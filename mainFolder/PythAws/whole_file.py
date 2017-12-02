@@ -13,7 +13,7 @@ def create():
         print("table created")
     except Exception as e:
         print(e)
-    db.close()
+    #db.close()
 
 
 def select():
@@ -21,10 +21,10 @@ def select():
     sql = "select *from emp"
     try:
        cursor.execute(sql)
-       results = cursor.fetchall()
+       results = cursor.fetchall()         #results=7 i.e no. of rows
 
        for row in results:
-          name = row[0]
+          name = row[0]                        #coloumn0
           age = row[1]
           Mob = row[2]
 
@@ -32,61 +32,64 @@ def select():
 
     except:
        print("Error: unable to fecth data")
-    db.close()
+    #db.close()
 
 def insert():
     cursor = db.cursor()
-    sql = "insert into emp(name,age,phone_Number)values('vyam',24,'9910905576')"
+    sql = "insert into emp(name,age,phone_Number)values('alok',20,'9910998576')"
     try:
         cursor.execute(sql)
-        db.commit()
+        #db.commit()
         print("data inserted")
     except Exception as e:
         print(e)
-    db.close()
+    #db.close()
 
 def update():
     cursor = db.cursor()
     sql = "UPDATE emp SET name='ram' WHERE phone_Number=9910905576"
     try:
         cursor.execute(sql)
-        db.commit()
+        #db.commit()
         print("1 row data updated")
     except Exception as e:
         print(e)
-    db.close()
+    #db.close()
 
 def delete():
     cursor = db.cursor()
     sql = "DELETE FROM emp WHERE AGE > '%d'" % (25)
     try:
         cursor.execute(sql)
-        db.commit()
+        #db.commit()
         print("1 row deleted")
     except Exception as e:
         print(e)
+    #db.close()
+try:
+    while True:
+            print()
+            print("press 1 for  create table")
+            print("press 2 for select")
+            print("press 3 for insert table")
+            print("press 4 for update table")
+            print("press 5 for delete table")
+            print("press 6 to exit")
+            print()
+            alpha = int(input("enter your choice"))
+
+            opt={1:create,
+                 2:select,
+                 3:insert,
+                 4:update,
+                 5:delete,
+                 6:exit
+                 }
+            opt[alpha]()
+
+except Exception as e:
+    print(e)
+
+finally:
     db.close()
-
-while True:
-    try:
-        print()
-        print("press 1 for  create table")
-        print("press 2 for select")
-        print("press 3 for insert table")
-        print("press 4 for update table")
-        print("press 5 for delete table")
-        print("press 6 to exit")
-        print()
-        alpha = int(input("enter your choice"))
-
-        opt={1:create,
-             2:select,
-             3:insert,
-             4:update,
-             5:delete,
-             6:exit
-             }
-        opt[alpha]()
-    except Exception as e:
-        print(e)
 
