@@ -5,8 +5,8 @@ from boto3 import client
 #b_name=input("enter name of bucket")
 
 
-s3 = boto3.resource('s3',aws_access_key_id='AKIAJHWO2QI4BBQS6Q2A',
-            aws_secret_access_key='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',
+s3 = boto3.resource('s3',aws_access_key_id='AKIAJHWO2',
+            aws_secret_access_key='k/FDSKIBMvhf',
             config=Config(signature_version='s3v4'))
 
 def bucket_create():                                             #1
