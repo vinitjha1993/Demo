@@ -1,8 +1,8 @@
 import boto3
 from botocore.client import Config
 
-ACCESS_KEY_ID = 'AKIAJHWO2QI4BBQS6Q2A'
-ACCESS_SECRET_KEY = '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'
+ACCESS_KEY_ID = 'AKIAJHW'
+ACCESS_SECRET_KEY = 'k/FDSKIB'
 BUCKET_NAME = 'vinitnewbucket'
 
 data = open('/home/bridgeit/Desktop/forest.jpeg', 'rb')
